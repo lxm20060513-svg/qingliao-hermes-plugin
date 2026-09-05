@@ -1,0 +1,18 @@
+# 敏感文件不入库
+.inbox_token
+*.token
+.env
+.env.*
+
+# 运行时调试输出
+qingliao_out/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,32 @@
+name: qingliao-platform
+label: Qingliao
+kind: platform
+version: 1.0.0
+description: >
+  Qingliao gateway adapter for Hermes Agent. Bridges the Qingliao client
+  (wechat-profile's companion app) into the Hermes agent loop. Exposes a small
+  HTTP endpoint that the Qingliao backend POSTs inbound messages to; outbound
+  agent replies are written back to the Qingliao inbox for the app to poll.
+author: hermes
+requires_env:
+  - name: QINGLIAO_TOKEN
+    description: "Bearer token the Qingliao backend must present on inbound POST /chat."
+    prompt: "Qingliao push token"
+    password: true
+optional_env:
+  - name: QINGLIAO_PORT
+    description: "HTTP listen port for inbound Qingliao messages (default 9130)."
+    prompt: "Qingliao port"
+    password: false
+  - name: QINGLIAO_HOME_CHANNEL
+    description: "Default chat_id for cron / notification delivery."
+    prompt: "Home chat id (or empty)"
+    password: false
+  - name: QINGLIAO_ALLOWED_USERS
+    description: "Comma-separated user ids allowed to interact with the bot."
+    prompt: "Allowed user ids (comma-separated)"
+    password: false
+  - name: QINGLIAO_ALLOW_ALL
+    description: "Truthy switch to allow everyone."
+    prompt: "Allow all users (yes/no)"
+    password: false
