@@ -34,14 +34,21 @@
 
 ## 安装
 
-插件放到 Hermes profile 的 `plugins/` 目录下（用户级目录，镜像重建不覆盖）：
+**一键安装**（自动 clone 到目标目录、清掉 `.git`、并提示后续配置）：
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/lxm20060513-svg/qingliao-hermes-plugin/main/install.sh) <你的profile>/plugins/qingliao-platform
+```
+
+> curl 远程执行前建议先审阅 [`install.sh`](install.sh)（本仓库根目录）。也可 `git clone` 本仓库后本地运行 `bash install.sh <目标目录>`。
+
+手动方式——插件放到 Hermes profile 的 `plugins/` 目录下（用户级目录，镜像重建不覆盖）：
 
 ```
 <profile>/plugins/qingliao-platform/
 ├── plugin.yaml
-└── qingliao_platform/
-    ├── __init__.py
-    └── adapter.py
+├── __init__.py
+└── adapter.py
 ```
 
 > 用哪个 profile 就放到哪个 profile 的 `plugins/` 下。Hermes 插件发现机制会扫描该目录的 `plugin.yaml` 清单并调用 `register(ctx)` 注册平台。
