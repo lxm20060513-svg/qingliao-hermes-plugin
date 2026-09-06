@@ -4,7 +4,7 @@ kind: platform
 version: 1.0.0
 description: >
   Qingliao gateway adapter for Hermes Agent. Bridges the Qingliao client
-  (wechat-profile's companion app) into the Hermes agent loop. Exposes a small
+  (the Qingliao app) into the Hermes agent loop. Exposes a small
   HTTP endpoint that the Qingliao backend POSTs inbound messages to; outbound
   agent replies are written back to the Qingliao inbox for the app to poll.
 author: hermes
